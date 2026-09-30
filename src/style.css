@@ -540,16 +540,18 @@ ul, ol {
 .mobile-nav-drawer {
   position: fixed;
   inset: 0;
-  background: rgba(5, 5, 5, 0.96);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  background: rgba(4, 7, 17, 0.98);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
   z-index: 999;
   display: flex;
   flex-direction: column;
-  padding: 6rem 2rem 3rem;
+  padding: 1.5rem 1.5rem 2.5rem;
   opacity: 0;
   pointer-events: none;
   transition: opacity var(--duration-normal) var(--ease-smooth);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .mobile-nav-drawer.open {
@@ -557,11 +559,74 @@ ul, ol {
   pointer-events: auto;
 }
 
+.mobile-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.mobile-drawer-close {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--duration-fast);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.mobile-drawer-close:hover,
+.mobile-drawer-close:focus {
+  color: #FFFFFF;
+  background: rgba(0, 240, 255, 0.15);
+  border-color: var(--red-bright);
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+}
+
 .mobile-nav-links {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.25rem;
   margin-bottom: auto;
+}
+
+.rakta-breadcrumbs {
+  padding: 1rem 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.rakta-breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.rakta-breadcrumbs a {
+  color: var(--text-secondary);
+  transition: color var(--duration-fast);
+}
+
+.rakta-breadcrumbs a:hover {
+  color: var(--red-bright);
+}
+
+.breadcrumb-separator {
+  color: var(--text-muted);
+  font-size: 0.85rem;
 }
 
 .mobile-nav-link {
@@ -1749,5 +1814,40 @@ dialog.lead-modal::backdrop {
   .custom-cursor-container,
   .custom-cursor-trail-canvas {
     display: none !important;
+  }
+}
+
+/* ==========================================================================
+   Mobile Responsiveness & Touch Optimization
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* Prevent iOS Safari automatic zoom on form input focus */
+  .form-input,
+  .form-select,
+  .form-textarea {
+    font-size: 16px !important;
+  }
+
+  /* Responsive Lead Modal */
+  dialog.lead-modal {
+    width: 94vw !important;
+    max-width: 94vw !important;
+    margin: auto !important;
+    border-radius: 16px !important;
+  }
+  .modal-header {
+    padding: 1.25rem 1.25rem 1rem !important;
+  }
+  .modal-body {
+    padding: 1.25rem !important;
+    max-height: 75vh !important;
+  }
+
+  /* Touch target safety */
+  .btn,
+  .nav-link,
+  .mobile-menu-btn,
+  .mobile-drawer-close {
+    min-height: 44px;
   }
 }

@@ -60,3 +60,14 @@ function rakta_enqueue_assets() {
     ]);
 }
 add_action('wp_enqueue_scripts', 'rakta_enqueue_assets');
+
+/**
+ * Add type="module" to ES module scripts (Three.js, GSAP, Main App)
+ */
+function rakta_script_type_module($tag, $handle, $src) {
+    if (in_array($handle, ['rakta-theme-app', 'rakta-three-vendor', 'rakta-gsap-vendor'], true)) {
+        return '<script type="module" src="' . esc_url($src) . '"></script>' . "\n";
+    }
+    return $tag;
+}
+add_filter('script_loader_tag', 'rakta_script_type_module', 10, 3);

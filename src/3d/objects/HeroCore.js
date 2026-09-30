@@ -1,11 +1,22 @@
 import * as THREE from 'three';
 
 export class HeroCore {
-  constructor() {
+  constructor(options = {}) {
     this.group = new THREE.Group();
     this.rings = [];
     this.nodes = [];
     this.nodeLines = null;
+
+    this.options = Object.assign({
+      coreColor: 0x060B18,
+      emissiveColor: 0x002244,
+      latticeColor: 0x00F0FF,
+      ringColor1: 0x0066FF,
+      ringColor2: 0x00F0FF,
+      ringColor3: 0x38BDF8,
+      speedMultiplier: 1.0,
+      emissiveIntensity: 0.5
+    }, options);
 
     this.initCore();
     this.initLatticeShell();
@@ -17,11 +28,11 @@ export class HeroCore {
     // Futuristic dark metallic sphere with royal blue emissive reflection
     const sphereGeo = new THREE.SphereGeometry(1.5, 64, 64);
     const sphereMat = new THREE.MeshStandardMaterial({
-      color: 0x060B18,
+      color: new THREE.Color(this.options.coreColor),
       metalness: 0.95,
       roughness: 0.15,
-      emissive: 0x002244,
-      emissiveIntensity: 0.5
+      emissive: new THREE.Color(this.options.emissiveColor),
+      emissiveIntensity: this.options.emissiveIntensity
     });
 
     this.coreMesh = new THREE.Mesh(sphereGeo, sphereMat);
@@ -32,7 +43,7 @@ export class HeroCore {
     // Outer geometric digital wireframe facet in cyan
     const latticeGeo = new THREE.IcosahedronGeometry(1.65, 2);
     const latticeMat = new THREE.MeshBasicMaterial({
-      color: 0x00F0FF,
+      color: new THREE.Color(this.options.latticeColor),
       wireframe: true,
       transparent: true,
       opacity: 0.3,
@@ -45,15 +56,15 @@ export class HeroCore {
 
   initEnergyRings() {
     const ringConfigs = [
-      { radius: 2.2, tube: 0.022, rotX: Math.PI / 3, rotY: Math.PI / 6, speed: 0.4, color: 0x0066FF },
-      { radius: 2.65, tube: 0.016, rotX: -Math.PI / 4, rotY: Math.PI / 3, speed: -0.3, color: 0x00F0FF },
-      { radius: 3.1, tube: 0.012, rotX: Math.PI / 6, rotY: -Math.PI / 4, speed: 0.2, color: 0x38BDF8 }
+      { radius: 2.2, tube: 0.022, rotX: Math.PI / 3, rotY: Math.PI / 6, speed: 0.4 * this.options.speedMultiplier, color: this.options.ringColor1 },
+      { radius: 2.65, tube: 0.016, rotX: -Math.PI / 4, rotY: Math.PI / 3, speed: -0.3 * this.options.speedMultiplier, color: this.options.ringColor2 },
+      { radius: 3.1, tube: 0.012, rotX: Math.PI / 6, rotY: -Math.PI / 4, speed: 0.2 * this.options.speedMultiplier, color: this.options.ringColor3 }
     ];
 
     ringConfigs.forEach((cfg) => {
       const ringGeo = new THREE.TorusGeometry(cfg.radius, cfg.tube, 16, 120);
       const ringMat = new THREE.MeshBasicMaterial({
-        color: cfg.color,
+        color: new THREE.Color(cfg.color),
         transparent: true,
         opacity: 0.8,
         blending: THREE.AdditiveBlending

@@ -28,6 +28,11 @@ require_once RAKTA_CORE_DIR . 'inc/rest-lead.php';
 // Load Reusable Shortcodes
 require_once RAKTA_CORE_DIR . 'inc/shortcodes.php';
 
+// Load Elementor Custom Widgets Integration
+if (did_action('elementor/loaded') || true) {
+    require_once RAKTA_CORE_DIR . 'inc/elementor/class-rakta-elementor.php';
+}
+
 // Activation & Flush rewrite rules
 function rakta_core_activate() {
     rakta_register_cpt_services();

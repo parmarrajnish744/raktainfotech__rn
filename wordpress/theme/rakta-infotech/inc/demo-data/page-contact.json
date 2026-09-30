@@ -1,0 +1,144 @@
+{
+  "version": "0.4",
+  "title": "Contact Us - Rakta 3D",
+  "type": "page",
+  "content": [
+    {
+      "id": "sec_cont_hero",
+      "elType": "section",
+      "isInner": false,
+      "settings": {
+        "layout": "full_width",
+        "gap": "no"
+      },
+      "elements": [
+        {
+          "id": "col_cont_hero",
+          "elType": "column",
+          "elements": [
+            {
+              "id": "w_cont_hero",
+              "elType": "widget",
+              "widgetType": "rakta_hero_3d",
+              "settings": {
+                "badge_text": "Direct Communication Channel",
+                "brand_badge_text": "Rakta Infotech • Consultation & Inquiries",
+                "heading_line_1": "GET IN TOUCH",
+                "heading_line_2": "START YOUR PROJECT TODAY",
+                "subtitle": "Connect directly with our engineering leadership to scope your next platform, discuss architecture, or request a custom proposal.",
+                "primary_btn_text": "Open Project Form",
+                "primary_btn_is_modal": "yes",
+                "secondary_btn_text": "Our Guarantees",
+                "core_color": "#060A16",
+                "emissive_color": "#002A55",
+                "lattice_color": "#00F0FF",
+                "ring_color_1": "#0066FF",
+                "ring_color_2": "#00F0FF",
+                "speed_multiplier": {
+                  "size": 0.9
+                },
+                "particle_count": 750
+              }
+            }
+          ],
+          "settings": {
+            "_column_size": 100,
+            "_inline_size": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "sec_cont_form",
+      "elType": "section",
+      "isInner": false,
+      "settings": {
+        "layout": "full_width"
+      },
+      "elements": [
+        {
+          "id": "col_cont_form",
+          "elType": "column",
+          "elements": [
+            {
+              "id": "w_cont_form",
+              "elType": "widget",
+              "widgetType": "rakta_lead_modal",
+              "settings": {
+                "title": "Direct Inquiry & Consultation",
+                "subtitle": "Fill out the project brief below to receive an architectural scope and fixed-price quote from our team."
+              }
+            }
+          ],
+          "settings": {
+            "_column_size": 100,
+            "_inline_size": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "sec_cont_why_us",
+      "elType": "section",
+      "isInner": false,
+      "settings": {
+        "layout": "full_width"
+      },
+      "elements": [
+        {
+          "id": "col_cont_why_us",
+          "elType": "column",
+          "elements": [
+            {
+              "id": "w_cont_why_us",
+              "elType": "widget",
+              "widgetType": "rakta_why_us",
+              "settings": {
+                "badge_text": "Service Level Agreement",
+                "heading_text": "WHAT YOU CAN EXPECT",
+                "description_text": "Transparent fixed-scope milestones, guaranteed delivery timelines, and direct Slack / WhatsApp communication with senior leads."
+              }
+            }
+          ],
+          "settings": {
+            "_column_size": 100,
+            "_inline_size": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "sec_cont_cta",
+      "elType": "section",
+      "isInner": false,
+      "settings": {
+        "layout": "full_width"
+      },
+      "elements": [
+        {
+          "id": "col_cont_cta",
+          "elType": "column",
+          "elements": [
+            {
+              "id": "w_cont_cta",
+              "elType": "widget",
+              "widgetType": "rakta_cta",
+              "settings": {
+                "badge_text": "Prefer Direct Contact?",
+                "heading_text": "CALL OR EMAIL OUR TEAM DIRECTLY",
+                "description_text": "Reach out to contact@raktainfotech.com or message us on WhatsApp for rapid turnaround inquiries.",
+                "primary_btn_text": "Send WhatsApp Message",
+                "primary_is_modal": "no",
+                "secondary_btn_text": "Review Services"
+              }
+            }
+          ],
+          "settings": {
+            "_column_size": 100,
+            "_inline_size": null
+          }
+        }
+      ]
+    }
+  ]
+}

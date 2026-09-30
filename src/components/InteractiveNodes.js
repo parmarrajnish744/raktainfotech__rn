@@ -1,12 +1,13 @@
 import { ecosystemNodes } from '../data/technologies.js';
 
 export class InteractiveNodes {
-  constructor(ecosystem3DInstance) {
+  constructor(ecosystem3DInstance, container = document) {
     this.ecosystem3D = ecosystem3DInstance;
-    this.nodeCards = document.querySelectorAll('.node-card');
-    this.detailTitle = document.querySelector('.node-detail-panel .detail-title');
-    this.detailDesc = document.querySelector('.node-detail-panel .detail-desc');
-    this.detailStats = document.querySelector('.node-detail-panel .detail-stats');
+    this.container = container;
+    this.nodeCards = this.container.querySelectorAll('.node-card');
+    this.detailTitle = this.container.querySelector('.node-detail-panel .detail-title');
+    this.detailDesc = this.container.querySelector('.node-detail-panel .detail-desc');
+    this.detailStats = this.container.querySelector('.node-detail-panel .detail-stats');
 
     this.init();
   }

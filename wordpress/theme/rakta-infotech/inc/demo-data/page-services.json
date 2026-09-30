@@ -1,0 +1,240 @@
+{
+  "version": "0.4",
+  "title": "Services - Rakta 3D",
+  "type": "page",
+  "content": [
+    {
+      "id": "sec_serv_hero",
+      "elType": "section",
+      "isInner": false,
+      "settings": {
+        "layout": "full_width",
+        "gap": "no"
+      },
+      "elements": [
+        {
+          "id": "col_serv_hero",
+          "elType": "column",
+          "elements": [
+            {
+              "id": "w_serv_hero",
+              "elType": "widget",
+              "widgetType": "rakta_hero_3d",
+              "settings": {
+                "badge_text": "Full-Cycle Technology Solutions",
+                "brand_badge_text": "Rakta Infotech • Services & Architecture",
+                "heading_line_1": "WHAT WE BUILD",
+                "heading_line_2": "ENTERPRISE CAPABILITIES AT SCALE",
+                "subtitle": "From custom headless WordPress architectures to intelligent AI agents and high-throughput automation pipelines, explore our complete service catalog.",
+                "primary_btn_text": "Start a Project",
+                "primary_btn_is_modal": "yes",
+                "secondary_btn_text": "Explore Architecture",
+                "core_color": "#070E20",
+                "emissive_color": "#004488",
+                "lattice_color": "#00F0FF",
+                "ring_color_1": "#0066FF",
+                "ring_color_2": "#00F0FF",
+                "speed_multiplier": {
+                  "size": 1
+                },
+                "particle_count": 800
+              }
+            }
+          ],
+          "settings": {
+            "_column_size": 100,
+            "_inline_size": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "sec_serv_grid",
+      "elType": "section",
+      "isInner": false,
+      "settings": {
+        "layout": "full_width"
+      },
+      "elements": [
+        {
+          "id": "col_serv_grid",
+          "elType": "column",
+          "elements": [
+            {
+              "id": "w_serv_grid",
+              "elType": "widget",
+              "widgetType": "rakta_services",
+              "settings": {
+                "badge_text": "Specialized Capabilities",
+                "heading_text": "CORE ENGINEERING DISCIPLINES",
+                "description_text": "Tailored digital engineering solutions built with modern technology, maximum security, and uncompromising speed."
+              }
+            }
+          ],
+          "settings": {
+            "_column_size": 100,
+            "_inline_size": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "sec_serv_solutions",
+      "elType": "section",
+      "isInner": false,
+      "settings": {
+        "layout": "full_width"
+      },
+      "elements": [
+        {
+          "id": "col_serv_solutions",
+          "elType": "column",
+          "elements": [
+            {
+              "id": "w_serv_solutions",
+              "elType": "widget",
+              "widgetType": "rakta_solutions",
+              "settings": {
+                "badge_text": "Vertical Matrices",
+                "heading_text": "SOLUTIONS BY BUSINESS USE CASE",
+                "description_text": "Explore how our technology stacks address specific business challenges across eCommerce, enterprise workflows, and customer engagement."
+              }
+            }
+          ],
+          "settings": {
+            "_column_size": 100,
+            "_inline_size": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "sec_serv_ecosystem",
+      "elType": "section",
+      "isInner": false,
+      "settings": {
+        "layout": "full_width"
+      },
+      "elements": [
+        {
+          "id": "col_serv_ecosystem",
+          "elType": "column",
+          "elements": [
+            {
+              "id": "w_serv_ecosystem",
+              "elType": "widget",
+              "widgetType": "rakta_ecosystem_3d",
+              "settings": {
+                "badge_text": "Interactive Topology",
+                "heading_text": "HOW WE INTEGRATE TECH",
+                "description_text": "Every service we deliver fits into an orchestrated technological ecosystem with real-time data flows and AI capabilities.",
+                "core_color": "#060B18",
+                "emissive_color": "#0044BB",
+                "halo_color": "#00F0FF",
+                "orbit_radius": {
+                  "size": 2.6
+                }
+              }
+            }
+          ],
+          "settings": {
+            "_column_size": 100,
+            "_inline_size": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "sec_serv_process",
+      "elType": "section",
+      "isInner": false,
+      "settings": {
+        "layout": "full_width"
+      },
+      "elements": [
+        {
+          "id": "col_serv_process",
+          "elType": "column",
+          "elements": [
+            {
+              "id": "w_serv_process",
+              "elType": "widget",
+              "widgetType": "rakta_process",
+              "settings": {
+                "badge_text": "Execution Framework",
+                "heading_text": "END-TO-END PROJECT DELIVERY",
+                "description_text": "Our systematic process ensures high predictability, complete transparency, and flawless production delivery on every contract."
+              }
+            }
+          ],
+          "settings": {
+            "_column_size": 100,
+            "_inline_size": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "sec_serv_cta",
+      "elType": "section",
+      "isInner": false,
+      "settings": {
+        "layout": "full_width"
+      },
+      "elements": [
+        {
+          "id": "col_serv_cta",
+          "elType": "column",
+          "elements": [
+            {
+              "id": "w_serv_cta",
+              "elType": "widget",
+              "widgetType": "rakta_cta",
+              "settings": {
+                "badge_text": "Custom System Requirements?",
+                "heading_text": "LET'S SCOPE YOUR PROJECT TOGETHER",
+                "description_text": "Speak directly with our senior developers to get an exact architectural estimate, tech recommendation, and timeline for your platform.",
+                "primary_btn_text": "Request Proposal",
+                "primary_is_modal": "yes",
+                "secondary_btn_text": "View Case Studies"
+              }
+            }
+          ],
+          "settings": {
+            "_column_size": 100,
+            "_inline_size": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "sec_serv_modal",
+      "elType": "section",
+      "isInner": false,
+      "settings": {
+        "layout": "full_width"
+      },
+      "elements": [
+        {
+          "id": "col_serv_modal",
+          "elType": "column",
+          "elements": [
+            {
+              "id": "w_serv_modal",
+              "elType": "widget",
+              "widgetType": "rakta_lead_modal",
+              "settings": {
+                "title": "Service Inquiry Brief",
+                "subtitle": "Receive a comprehensive proposal within 24 hours. Confidentiality guaranteed."
+              }
+            }
+          ],
+          "settings": {
+            "_column_size": 100,
+            "_inline_size": null
+          }
+        }
+      ]
+    }
+  ]
+}

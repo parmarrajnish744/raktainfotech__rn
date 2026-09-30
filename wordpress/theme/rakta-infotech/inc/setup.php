@@ -39,5 +39,9 @@ function rakta_theme_setup() {
 
     // Selective Refresh for Widgets in Customizer
     add_theme_support('customize-selective-refresh-widgets');
+
+    // Wide and full alignments for Elementor and block editor
+    add_theme_support('align-wide');
+    add_theme_support('responsive-embeds');
 }
 add_action('after_setup_theme', 'rakta_theme_setup');

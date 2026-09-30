@@ -2,12 +2,25 @@ import * as THREE from 'three';
 import { ecosystemNodes } from '../../data/technologies.js';
 
 export class TechEcosystem {
-  constructor() {
+  constructor(options = {}) {
     this.group = new THREE.Group();
     this.satellites = new Map();
     this.beams = new Map();
     this.activeNodeId = null;
     this.targetRotationY = 0;
+
+    this.options = Object.assign({
+      nodes: ecosystemNodes,
+      coreColor: 0x090D18,
+      emissiveColor: 0x0066FF,
+      haloColor: 0x00F0FF,
+      orbitRadius: 2.6,
+      speedMultiplier: 1.0
+    }, options);
+
+    this.nodes = Array.isArray(this.options.nodes) && this.options.nodes.length > 0
+      ? this.options.nodes
+      : ecosystemNodes;
 
     this.initCentralCore();
     this.initSatelliteNodes();
@@ -17,10 +30,10 @@ export class TechEcosystem {
     // Inner pulsating core
     const coreGeo = new THREE.IcosahedronGeometry(0.85, 1);
     const coreMat = new THREE.MeshStandardMaterial({
-      color: 0x090D18,
+      color: new THREE.Color(this.options.coreColor),
       metalness: 0.9,
       roughness: 0.2,
-      emissive: 0x0066FF,
+      emissive: new THREE.Color(this.options.emissiveColor),
       emissiveIntensity: 0.6
     });
     this.coreMesh = new THREE.Mesh(coreGeo, coreMat);
@@ -29,7 +42,7 @@ export class TechEcosystem {
     // Outer wireframe halo in cyan
     const haloGeo = new THREE.IcosahedronGeometry(1.05, 2);
     const haloMat = new THREE.MeshBasicMaterial({
-      color: 0x00F0FF,
+      color: new THREE.Color(this.options.haloColor),
       wireframe: true,
       transparent: true,
       opacity: 0.4,
@@ -40,10 +53,10 @@ export class TechEcosystem {
   }
 
   initSatelliteNodes() {
-    const orbitRadius = 2.6;
+    const orbitRadius = this.options.orbitRadius || 2.6;
 
-    ecosystemNodes.forEach((node, idx) => {
-      const angle = (idx / ecosystemNodes.length) * Math.PI * 2;
+    this.nodes.forEach((node, idx) => {
+      const angle = (idx / this.nodes.length) * Math.PI * 2;
       const x = Math.cos(angle) * orbitRadius;
       const z = Math.sin(angle) * orbitRadius;
       const y = Math.sin(angle * 2) * 0.35; // Slight wave elevation

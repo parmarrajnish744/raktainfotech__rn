@@ -26,14 +26,14 @@ function rakta_register_cpt_portfolio() {
     $args = [
         'labels'             => $labels,
         'public'             => true,
-        'has_archive'        => true,
+        'has_archive'        => false,
         'publicly_queryable' => true,
         'show_ui'            => true,
         'show_in_menu'       => true,
         'show_in_rest'       => true,
         'menu_icon'          => 'dashicons-portfolio',
         'supports'           => ['title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'],
-        'rewrite'            => ['slug' => 'portfolio'],
+        'rewrite'            => ['slug' => 'project', 'with_front' => false],
     ];
 
     register_post_type('project', $args);

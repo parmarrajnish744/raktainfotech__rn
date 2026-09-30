@@ -1,0 +1,330 @@
+{
+  "version": "0.4",
+  "title": "Rakta 3D Homepage Complete",
+  "type": "page",
+  "content": [
+    {
+      "id": "sec_hero",
+      "elType": "section",
+      "isInner": false,
+      "settings": {
+        "layout": "full_width",
+        "gap": "no"
+      },
+      "elements": [
+        {
+          "id": "col_hero",
+          "elType": "column",
+          "elements": [
+            {
+              "id": "w_hero",
+              "elType": "widget",
+              "widgetType": "rakta_hero_3d",
+              "settings": {
+                "badge_text": "Powered by AI, Web & Automation",
+                "brand_badge_text": "Rakta Infotech • Digital Experiences & AI",
+                "heading_line_1": "WE BUILD",
+                "heading_line_2": "DIGITAL EXPERIENCES",
+                "subtitle": "AI-powered websites, high-converting e-commerce platforms and intelligent business automation built for modern digital enterprises.",
+                "primary_btn_text": "Start a Project",
+                "primary_btn_is_modal": "yes",
+                "secondary_btn_text": "Explore Our Work",
+                "core_color": "#060B18",
+                "emissive_color": "#002244",
+                "lattice_color": "#00F0FF",
+                "ring_color_1": "#0066FF",
+                "ring_color_2": "#00F0FF",
+                "speed_multiplier": {
+                  "size": 1
+                },
+                "particle_count": 800
+              }
+            }
+          ],
+          "settings": {
+            "_column_size": 100,
+            "_inline_size": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "sec_stats",
+      "elType": "section",
+      "isInner": false,
+      "settings": {
+        "layout": "full_width"
+      },
+      "elements": [
+        {
+          "id": "col_stats",
+          "elType": "column",
+          "elements": [
+            {
+              "id": "w_stats",
+              "elType": "widget",
+              "widgetType": "rakta_stats",
+              "settings": {
+                "badge_text": "Proven Engineering Metrics",
+                "heading_text": "ARCHITECTED FOR MEASURABLE IMPACT",
+                "description_text": "Real-world technical benchmarks and business metrics achieved across high-scale platforms."
+              }
+            }
+          ],
+          "settings": {
+            "_column_size": 100,
+            "_inline_size": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "sec_services",
+      "elType": "section",
+      "isInner": false,
+      "settings": {
+        "layout": "full_width"
+      },
+      "elements": [
+        {
+          "id": "col_services",
+          "elType": "column",
+          "elements": [
+            {
+              "id": "w_services",
+              "elType": "widget",
+              "widgetType": "rakta_services",
+              "settings": {
+                "badge_text": "Specialized Capabilities",
+                "heading_text": "WHAT WE BUILD",
+                "description_text": "We merge cutting-edge technology with high-conversion product design to engineer systems that scale effortlessly."
+              }
+            }
+          ],
+          "settings": {
+            "_column_size": 100,
+            "_inline_size": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "sec_ecosystem",
+      "elType": "section",
+      "isInner": false,
+      "settings": {
+        "layout": "full_width"
+      },
+      "elements": [
+        {
+          "id": "col_ecosystem",
+          "elType": "column",
+          "elements": [
+            {
+              "id": "w_ecosystem",
+              "elType": "widget",
+              "widgetType": "rakta_ecosystem_3d",
+              "settings": {
+                "badge_text": "Interactive Architecture",
+                "heading_text": "CONNECTED TECH ECOSYSTEM",
+                "description_text": "An integrated 3D computational nexus connecting AI intelligence, modern headless web, automated workflows, and global commerce.",
+                "core_color": "#090D18",
+                "emissive_color": "#0066FF",
+                "halo_color": "#00F0FF",
+                "orbit_radius": {
+                  "size": 2.6
+                }
+              }
+            }
+          ],
+          "settings": {
+            "_column_size": 100,
+            "_inline_size": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "sec_solutions",
+      "elType": "section",
+      "isInner": false,
+      "settings": {
+        "layout": "full_width"
+      },
+      "elements": [
+        {
+          "id": "col_solutions",
+          "elType": "column",
+          "elements": [
+            {
+              "id": "w_solutions",
+              "elType": "widget",
+              "widgetType": "rakta_solutions",
+              "settings": {
+                "badge_text": "End-to-End Capabilities",
+                "heading_text": "ENGINEERED SOLUTIONS",
+                "description_text": "Explore our full spectrum of modern digital competencies structured across distinct industry verticals."
+              }
+            }
+          ],
+          "settings": {
+            "_column_size": 100,
+            "_inline_size": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "sec_portfolio",
+      "elType": "section",
+      "isInner": false,
+      "settings": {
+        "layout": "full_width"
+      },
+      "elements": [
+        {
+          "id": "col_portfolio",
+          "elType": "column",
+          "elements": [
+            {
+              "id": "w_portfolio",
+              "elType": "widget",
+              "widgetType": "rakta_portfolio",
+              "settings": {
+                "badge_text": "Demonstrated Production Work",
+                "heading_text": "FEATURED CASE STUDIES",
+                "description_text": "Real-world deployment outcomes engineered for international enterprises, agencies, and high-growth startups."
+              }
+            }
+          ],
+          "settings": {
+            "_column_size": 100,
+            "_inline_size": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "sec_process",
+      "elType": "section",
+      "isInner": false,
+      "settings": {
+        "layout": "full_width"
+      },
+      "elements": [
+        {
+          "id": "col_process",
+          "elType": "column",
+          "elements": [
+            {
+              "id": "w_process",
+              "elType": "widget",
+              "widgetType": "rakta_process",
+              "settings": {
+                "badge_text": "Systematic Execution",
+                "heading_text": "HOW WE DELIVER SUCCESS",
+                "description_text": "A disciplined 6-stage engineering lifecycle transforming ambitious concepts into high-reliability production systems."
+              }
+            }
+          ],
+          "settings": {
+            "_column_size": 100,
+            "_inline_size": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "sec_why_us",
+      "elType": "section",
+      "isInner": false,
+      "settings": {
+        "layout": "full_width"
+      },
+      "elements": [
+        {
+          "id": "col_why_us",
+          "elType": "column",
+          "elements": [
+            {
+              "id": "w_why_us",
+              "elType": "widget",
+              "widgetType": "rakta_why_us",
+              "settings": {
+                "badge_text": "Strategic Advantage",
+                "heading_text": "WHY CHOOSE RAKTA INFOTECH",
+                "description_text": "We engineer digital products with uncompromising craftsmanship, architectural longevity, and measurable ROI."
+              }
+            }
+          ],
+          "settings": {
+            "_column_size": 100,
+            "_inline_size": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "sec_cta",
+      "elType": "section",
+      "isInner": false,
+      "settings": {
+        "layout": "full_width"
+      },
+      "elements": [
+        {
+          "id": "col_cta",
+          "elType": "column",
+          "elements": [
+            {
+              "id": "w_cta",
+              "elType": "widget",
+              "widgetType": "rakta_cta",
+              "settings": {
+                "badge_text": "Ready to Transform Your Digital Reality?",
+                "heading_text": "LET'S ARCHITECT YOUR NEXT BREAKTHROUGH",
+                "description_text": "Whether you need a high-conversion modern web platform, autonomous AI agents, or automated enterprise pipelines, our senior engineers are ready to build.",
+                "primary_btn_text": "Schedule Strategic Consultation",
+                "primary_is_modal": "yes",
+                "secondary_btn_text": "Explore Case Studies"
+              }
+            }
+          ],
+          "settings": {
+            "_column_size": 100,
+            "_inline_size": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "sec_lead_modal",
+      "elType": "section",
+      "isInner": false,
+      "settings": {
+        "layout": "full_width"
+      },
+      "elements": [
+        {
+          "id": "col_lead_modal",
+          "elType": "column",
+          "elements": [
+            {
+              "id": "w_lead_modal",
+              "elType": "widget",
+              "widgetType": "rakta_lead_modal",
+              "settings": {
+                "title": "Initiate Your Project Brief",
+                "subtitle": "Direct consultation with our senior systems architect. Strictly confidential NDA guaranteed."
+              }
+            }
+          ],
+          "settings": {
+            "_column_size": 100,
+            "_inline_size": null
+          }
+        }
+      ]
+    }
+  ]
+}

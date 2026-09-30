@@ -55,7 +55,7 @@ class RaktaApp {
 
   renderServices() {
     const container = document.getElementById('services-container');
-    if (!container) return;
+    if (!container || container.children.length > 0) return;
 
     container.innerHTML = servicesData.map((svc) => `
       <div class="glass-card service-card" data-service-id="${svc.id}">
@@ -92,7 +92,7 @@ class RaktaApp {
 
   renderEcosystemNodes() {
     const container = document.getElementById('ecosystem-nodes-container');
-    if (!container) return;
+    if (!container || container.children.length > 0) return;
 
     container.innerHTML = ecosystemNodes.map((node) => `
       <div class="node-card" data-node-id="${node.id}" tabindex="0" role="button" aria-label="Activate ${node.label} Node">
@@ -107,7 +107,7 @@ class RaktaApp {
 
   renderSolutions() {
     const container = document.getElementById('solutions-panels-container');
-    if (!container) return;
+    if (!container || container.children.length > 0) return;
 
     container.innerHTML = solutionsCategories.map((cat, idx) => `
       <div class="solutions-content-panel ${idx === 0 ? 'active' : ''}" data-category="${cat.id}" role="tabpanel">
@@ -132,7 +132,7 @@ class RaktaApp {
 
   renderProjects() {
     const container = document.getElementById('projects-container');
-    if (!container) return;
+    if (!container || container.children.length > 0) return;
 
     container.innerHTML = projectsData.map((p) => `
       <div class="glass-card project-card" data-project-id="${p.id}">
@@ -168,7 +168,7 @@ class RaktaApp {
 
   renderProcess() {
     const container = document.getElementById('process-steps-container');
-    if (!container) return;
+    if (!container || container.children.length > 0) return;
 
     container.innerHTML = processSteps.map((s, idx) => `
       <div class="timeline-step ${idx === 0 ? 'active' : ''}" data-step="${s.step}">
@@ -189,7 +189,7 @@ class RaktaApp {
 
   renderWhyUs() {
     const container = document.getElementById('why-us-container');
-    if (!container) return;
+    if (!container || container.children.length > 0) return;
 
     container.innerHTML = whyUsData.map((item) => `
       <div class="glass-card bento-card">
@@ -202,7 +202,7 @@ class RaktaApp {
 
   renderTechStack() {
     const container = document.getElementById('tech-stack-container');
-    if (!container) return;
+    if (!container || container.children.length > 0) return;
 
     container.innerHTML = techStackData.map((tech) => `
       <div class="tech-card">
@@ -214,41 +214,99 @@ class RaktaApp {
   }
 
   init3DScenes() {
-    const heroCanvas = document.getElementById('hero-canvas');
-    const ecosystemCanvas = document.getElementById('ecosystem-canvas');
-
     if (!this.perf.hasWebGL) {
       console.warn('WebGL is unavailable on this device. Activating high-performance static fallback.');
-      WebGLFallback.activate('.hero-3d-container', '.hero-fallback');
+      WebGLFallback.activate('.hero-3d-container, .rakta-3d-hero-wrap', '.hero-fallback');
       return;
     }
 
+    // Initialize all Hero 3D Canvases (support ID or class)
+    const heroCanvases = document.querySelectorAll('#hero-canvas, .rakta-hero-canvas');
+    heroCanvases.forEach((canvas) => {
+      this.mountHeroCanvas(canvas);
+    });
+
+    // Initialize all Ecosystem 3D Canvases (support ID or class)
+    const ecosystemCanvases = document.querySelectorAll('#ecosystem-canvas, .rakta-ecosystem-canvas');
+    ecosystemCanvases.forEach((canvas) => {
+      this.mountEcosystemCanvas(canvas);
+    });
+  }
+
+  mountHeroCanvas(canvas) {
+    if (!canvas || canvas.dataset.raktaInitialized) return;
+    canvas.dataset.raktaInitialized = 'true';
+
     try {
-      // 1. Initialize Hero 3D Scene
-      if (heroCanvas) {
-        this.heroSceneManager = new SceneManager(heroCanvas, { fov: 45 });
-        this.heroCore = new HeroCore();
-        this.heroParticles = new ParticleSystem(800, 12);
-
-        this.heroSceneManager.add(this.heroCore);
-        this.heroSceneManager.add(this.heroParticles);
+      let config = {};
+      if (canvas.dataset.sceneConfig) {
+        try {
+          config = JSON.parse(canvas.dataset.sceneConfig);
+        } catch (e) {
+          console.warn('Invalid data-scene-config JSON on hero canvas', e);
+        }
       }
 
-      // 2. Initialize Ecosystem 3D Scene
-      if (ecosystemCanvas) {
-        this.ecosystemSceneManager = new SceneManager(ecosystemCanvas, { fov: 40 });
-        this.ecosystem3D = new TechEcosystem();
-        this.ecosystemSceneManager.add(this.ecosystem3D);
+      const sceneManager = new SceneManager(canvas, { fov: config.fov || 45 });
+      const heroCore = new HeroCore(config);
+      const heroParticles = new ParticleSystem(config.particleCount || 800, 12);
 
-        // Bind interactive DOM cards to 3D reactions
-        this.interactiveNodes = new InteractiveNodes(this.ecosystem3D);
-      }
+      sceneManager.add(heroCore);
+      sceneManager.add(heroParticles);
+      canvas._sceneManager = sceneManager;
+      canvas._heroCore = heroCore;
     } catch (err) {
-      console.error('Error during 3D engine initialization:', err);
-      WebGLFallback.activate('.hero-3d-container', '.hero-fallback');
+      console.error('Error mounting Hero 3D scene:', err);
+    }
+  }
+
+  mountEcosystemCanvas(canvas) {
+    if (!canvas || canvas.dataset.raktaInitialized) return;
+    canvas.dataset.raktaInitialized = 'true';
+
+    try {
+      let config = {};
+      if (canvas.dataset.sceneConfig) {
+        try {
+          config = JSON.parse(canvas.dataset.sceneConfig);
+        } catch (e) {
+          console.warn('Invalid data-scene-config JSON on ecosystem canvas', e);
+        }
+      }
+
+      const sceneManager = new SceneManager(canvas, { fov: config.fov || 40 });
+      const ecosystem3D = new TechEcosystem(config);
+      sceneManager.add(ecosystem3D);
+      canvas._sceneManager = sceneManager;
+      canvas._ecosystem3D = ecosystem3D;
+
+      // Bind interactive nodes container if present nearby
+      const parentWrap = canvas.closest('.ecosystem-section, .rakta-ecosystem-wrap') || document;
+      new InteractiveNodes(ecosystem3D, parentWrap);
+    } catch (err) {
+      console.error('Error mounting Ecosystem 3D scene:', err);
     }
   }
 }
+
+// Global 3D Engine Bridge for Elementor & external initialization
+window.Rakta3DEngine = {
+  mountHero: (canvas) => {
+    if (window.__raktaApp) window.__raktaApp.mountHeroCanvas(canvas);
+  },
+  mountEcosystem: (canvas) => {
+    if (window.__raktaApp) window.__raktaApp.mountEcosystemCanvas(canvas);
+  },
+  reinitElements: (container = document) => {
+    if (window.__raktaApp) {
+      // Re-trigger CardSpotlight & Motion
+      if (window.__raktaApp.cardSpotlight) window.__raktaApp.cardSpotlight.init();
+      if (window.__raktaApp.leadModal) window.__raktaApp.leadModal.init();
+      container.querySelectorAll('.rakta-hero-canvas').forEach(c => window.__raktaApp.mountHeroCanvas(c));
+      container.querySelectorAll('.rakta-ecosystem-canvas').forEach(c => window.__raktaApp.mountEcosystemCanvas(c));
+    }
+  }
+};
 
 // Bootstrap on DOMContentLoaded
 document.addEventListener('DOMContentLoaded', () => {

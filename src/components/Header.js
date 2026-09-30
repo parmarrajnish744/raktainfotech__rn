@@ -3,7 +3,8 @@ export class Header {
     this.header = document.querySelector('.site-header');
     this.mobileBtn = document.querySelector('.mobile-menu-btn');
     this.mobileDrawer = document.querySelector('.mobile-nav-drawer');
-    this.navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
+    this.drawerCloseBtn = document.querySelector('.mobile-drawer-close');
+    this.navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link, .mobile-nav-drawer a');
     this.isOpen = false;
 
     this.init();
@@ -32,6 +33,28 @@ export class Header {
       this.toggleMobileMenu();
     });
 
+    if (this.drawerCloseBtn) {
+      this.drawerCloseBtn.addEventListener('click', () => {
+        this.toggleMobileMenu(false);
+      });
+    }
+
+    // Close on clicking backdrop
+    this.mobileDrawer.addEventListener('click', (e) => {
+      if (e.target === this.mobileDrawer) {
+        this.toggleMobileMenu(false);
+      }
+    });
+
+    // Close when clicking any link inside drawer
+    this.mobileDrawer.querySelectorAll('a, button[data-open-lead-modal]').forEach((item) => {
+      item.addEventListener('click', () => {
+        if (this.isOpen) {
+          this.toggleMobileMenu(false);
+        }
+      });
+    });
+
     // Close on escape
     window.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && this.isOpen) {
@@ -44,6 +67,7 @@ export class Header {
     this.isOpen = forceState !== undefined ? forceState : !this.isOpen;
     this.mobileDrawer.classList.toggle('open', this.isOpen);
     this.mobileBtn.setAttribute('aria-expanded', this.isOpen ? 'true' : 'false');
+    this.mobileDrawer.setAttribute('aria-hidden', this.isOpen ? 'false' : 'true');
     document.body.style.overflow = this.isOpen ? 'hidden' : '';
   }
 

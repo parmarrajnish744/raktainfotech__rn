@@ -9,7 +9,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 ?>
-</main><!-- #primary -->
+</div><!-- #content -->
 
 <footer class="site-footer" role="contentinfo">
     <div class="container">
@@ -29,24 +29,24 @@ if (!defined('ABSPATH')) {
             <div class="footer-col">
                 <h4 class="footer-col-title"><?php esc_html_e('Navigation', 'rakta-infotech'); ?></h4>
                 <ul class="footer-links">
-                    <li><a href="#hero" class="footer-link">Home</a></li>
-                    <li><a href="#services" class="footer-link">Services</a></li>
-                    <li><a href="#ecosystem" class="footer-link">3D Ecosystem</a></li>
-                    <li><a href="#solutions" class="footer-link">Solutions</a></li>
-                    <li><a href="#work" class="footer-link">Work</a></li>
-                    <li><a href="#process" class="footer-link">Process</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/')); ?>" class="footer-link"><?php esc_html_e('Home', 'rakta-infotech'); ?></a></li>
+                    <li><a href="<?php echo esc_url(home_url('/about/')); ?>" class="footer-link"><?php esc_html_e('About Us', 'rakta-infotech'); ?></a></li>
+                    <li><a href="<?php echo esc_url(home_url('/services/')); ?>" class="footer-link"><?php esc_html_e('Services', 'rakta-infotech'); ?></a></li>
+                    <li><a href="<?php echo esc_url(home_url('/portfolio/')); ?>" class="footer-link"><?php esc_html_e('Portfolio', 'rakta-infotech'); ?></a></li>
+                    <li><a href="<?php echo esc_url(home_url('/blog/')); ?>" class="footer-link"><?php esc_html_e('Blog', 'rakta-infotech'); ?></a></li>
+                    <li><a href="<?php echo esc_url(home_url('/contact/')); ?>" class="footer-link"><?php esc_html_e('Contact Us', 'rakta-infotech'); ?></a></li>
                 </ul>
             </div>
 
             <div class="footer-col">
                 <h4 class="footer-col-title"><?php esc_html_e('Services', 'rakta-infotech'); ?></h4>
                 <ul class="footer-links">
-                    <li><a href="#services" class="footer-link">WordPress Development</a></li>
-                    <li><a href="#services" class="footer-link">WooCommerce Stores</a></li>
-                    <li><a href="#services" class="footer-link">AI Solutions & Agents</a></li>
-                    <li><a href="#services" class="footer-link">WhatsApp Automation</a></li>
-                    <li><a href="#services" class="footer-link">Business Automation</a></li>
-                    <li><a href="#services" class="footer-link">Custom Web Apps</a></li>
+                    <li><a href="<?php echo esc_url(home_url('/services/')); ?>" class="footer-link"><?php esc_html_e('WordPress Development', 'rakta-infotech'); ?></a></li>
+                    <li><a href="<?php echo esc_url(home_url('/services/')); ?>" class="footer-link"><?php esc_html_e('WooCommerce Stores', 'rakta-infotech'); ?></a></li>
+                    <li><a href="<?php echo esc_url(home_url('/services/')); ?>" class="footer-link"><?php esc_html_e('AI Solutions & Agents', 'rakta-infotech'); ?></a></li>
+                    <li><a href="<?php echo esc_url(home_url('/services/')); ?>" class="footer-link"><?php esc_html_e('WhatsApp Automation', 'rakta-infotech'); ?></a></li>
+                    <li><a href="<?php echo esc_url(home_url('/services/')); ?>" class="footer-link"><?php esc_html_e('Business Automation', 'rakta-infotech'); ?></a></li>
+                    <li><a href="<?php echo esc_url(home_url('/services/')); ?>" class="footer-link"><?php esc_html_e('Custom Web Apps', 'rakta-infotech'); ?></a></li>
                 </ul>
             </div>
 
@@ -63,9 +63,9 @@ if (!defined('ABSPATH')) {
         <div class="footer-bottom">
             <div>&copy; <?php echo date('Y'); ?> <?php esc_html_e('Rakta Infotech. All Rights Reserved.', 'rakta-infotech'); ?></div>
             <div class="footer-legal-links">
-                <a href="#" class="footer-link"><?php esc_html_e('Privacy Policy', 'rakta-infotech'); ?></a>
-                <a href="#" class="footer-link"><?php esc_html_e('Terms & Conditions', 'rakta-infotech'); ?></a>
-                <a href="#hero" class="footer-link" style="color: var(--red-bright);"><?php esc_html_e('Back to Top ↑', 'rakta-infotech'); ?></a>
+                <a href="<?php echo esc_url(home_url('/')); ?>" class="footer-link"><?php esc_html_e('Privacy Policy', 'rakta-infotech'); ?></a>
+                <a href="<?php echo esc_url(home_url('/')); ?>" class="footer-link"><?php esc_html_e('Terms & Conditions', 'rakta-infotech'); ?></a>
+                <a href="#top" class="footer-link" style="color: var(--red-bright);" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;"><?php esc_html_e('Back to Top ↑', 'rakta-infotech'); ?></a>
             </div>
         </div>
     </div>

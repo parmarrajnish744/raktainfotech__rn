@@ -1,0 +1,204 @@
+{
+  "version": "0.4",
+  "title": "Portfolio - Rakta 3D",
+  "type": "page",
+  "content": [
+    {
+      "id": "sec_port_hero",
+      "elType": "section",
+      "isInner": false,
+      "settings": {
+        "layout": "full_width",
+        "gap": "no"
+      },
+      "elements": [
+        {
+          "id": "col_port_hero",
+          "elType": "column",
+          "elements": [
+            {
+              "id": "w_port_hero",
+              "elType": "widget",
+              "widgetType": "rakta_hero_3d",
+              "settings": {
+                "badge_text": "Demonstrated Production Work",
+                "brand_badge_text": "Rakta Infotech • Showcase & Deliverables",
+                "heading_line_1": "OUR WORK",
+                "heading_line_2": "HIGH-IMPACT DELIVERABLES",
+                "subtitle": "Explore real-world client platforms, intelligent web applications, and mission-critical digital systems delivered by Rakta Infotech.",
+                "primary_btn_text": "Start a Project",
+                "primary_btn_is_modal": "yes",
+                "secondary_btn_text": "Review Benchmarks",
+                "core_color": "#091228",
+                "emissive_color": "#003388",
+                "lattice_color": "#00F0FF",
+                "ring_color_1": "#0066FF",
+                "ring_color_2": "#00F0FF",
+                "speed_multiplier": {
+                  "size": 1
+                },
+                "particle_count": 800
+              }
+            }
+          ],
+          "settings": {
+            "_column_size": 100,
+            "_inline_size": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "sec_port_grid",
+      "elType": "section",
+      "isInner": false,
+      "settings": {
+        "layout": "full_width"
+      },
+      "elements": [
+        {
+          "id": "col_port_grid",
+          "elType": "column",
+          "elements": [
+            {
+              "id": "w_port_grid",
+              "elType": "widget",
+              "widgetType": "rakta_portfolio",
+              "settings": {
+                "badge_text": "Production Case Studies",
+                "heading_text": "FEATURED CLIENT PLATFORMS",
+                "description_text": "Interactive showcase of our recent high-traffic websites, custom WooCommerce solutions, and AI automation engines."
+              }
+            }
+          ],
+          "settings": {
+            "_column_size": 100,
+            "_inline_size": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "sec_port_stats",
+      "elType": "section",
+      "isInner": false,
+      "settings": {
+        "layout": "full_width"
+      },
+      "elements": [
+        {
+          "id": "col_port_stats",
+          "elType": "column",
+          "elements": [
+            {
+              "id": "w_port_stats",
+              "elType": "widget",
+              "widgetType": "rakta_stats",
+              "settings": {
+                "badge_text": "Cumulative Impact",
+                "heading_text": "MEASURABLE CLIENT OUTCOMES",
+                "description_text": "Technical speed improvements, conversion multipliers, and operational uptime delivered to our partners."
+              }
+            }
+          ],
+          "settings": {
+            "_column_size": 100,
+            "_inline_size": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "sec_port_why_us",
+      "elType": "section",
+      "isInner": false,
+      "settings": {
+        "layout": "full_width"
+      },
+      "elements": [
+        {
+          "id": "col_port_why_us",
+          "elType": "column",
+          "elements": [
+            {
+              "id": "w_port_why_us",
+              "elType": "widget",
+              "widgetType": "rakta_why_us",
+              "settings": {
+                "badge_text": "Our Guarantee",
+                "heading_text": "THE RAKTA DIFFERENCE",
+                "description_text": "Why leading brands choose us for mission-critical software engineering and digital transformation."
+              }
+            }
+          ],
+          "settings": {
+            "_column_size": 100,
+            "_inline_size": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "sec_port_cta",
+      "elType": "section",
+      "isInner": false,
+      "settings": {
+        "layout": "full_width"
+      },
+      "elements": [
+        {
+          "id": "col_port_cta",
+          "elType": "column",
+          "elements": [
+            {
+              "id": "w_port_cta",
+              "elType": "widget",
+              "widgetType": "rakta_cta",
+              "settings": {
+                "badge_text": "Have a Similar Platform in Mind?",
+                "heading_text": "LET'S BUILD YOUR SUCCESS STORY",
+                "description_text": "Get in touch today to discuss how we can engineer an industry-leading digital presence for your brand.",
+                "primary_btn_text": "Start Your Project",
+                "primary_is_modal": "yes",
+                "secondary_btn_text": "Contact Our Team"
+              }
+            }
+          ],
+          "settings": {
+            "_column_size": 100,
+            "_inline_size": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "sec_port_modal",
+      "elType": "section",
+      "isInner": false,
+      "settings": {
+        "layout": "full_width"
+      },
+      "elements": [
+        {
+          "id": "col_port_modal",
+          "elType": "column",
+          "elements": [
+            {
+              "id": "w_port_modal",
+              "elType": "widget",
+              "widgetType": "rakta_lead_modal",
+              "settings": {
+                "title": "Discuss Your Next Build",
+                "subtitle": "Confidential proposal tailored to your specifications within 24 hours."
+              }
+            }
+          ],
+          "settings": {
+            "_column_size": 100,
+            "_inline_size": null
+          }
+        }
+      ]
+    }
+  ]
+}
