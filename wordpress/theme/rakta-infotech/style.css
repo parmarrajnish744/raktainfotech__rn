@@ -1,0 +1,17 @@
+/*
+Theme Name: Rakta Infotech
+Theme URI: https://raktainfotech.com/
+Author: Rakta Infotech Team
+Author URI: https://raktainfotech.com/
+Description: Futuristic, responsive 3D agency WordPress theme built for AI, modern web, and business automation.
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.7
+Requires PHP: 8.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: rakta-infotech
+Tags: agency, portfolio, dark-mode, custom-background, featured-images, full-site-editing, threaded-comments, translation-ready, woocommerce
+*/
+
+/* Core theme styles are bundled and enqueued via inc/enqueue.php */
